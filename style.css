@@ -1,0 +1,565 @@
+/* --- Estilos Globales --- */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Un gris-verde muy claro */
+    color: #333;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Encabezado y Navegación --- */
+.main-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #00695C; /* Verde oscuro */
+    padding: 15px 0;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header h1 {
+    margin: 0;
+    color: #004D40; /* Verde más oscuro */
+    font-size: 24px;
+}
+
+.main-header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #00796B; /* Verde medio */
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.main-header nav a:hover {
+    text-decoration: underline;
+}
+
+/* --- Sección Héroe (Banner principal) --- */
+.hero-section {
+    /* En un proyecto real, aquí pondrías una imagen de fondo */
+    background-color: #004D40; /* Color de fondo si no hay imagen */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* Oscurece la imagen */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin: 0 0 10px 0;
+}
+
+.hero-content p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* --- Sección de Dato Destacado --- */
+.highlight-section {
+    background-color: #FFC107; /* Amarillo/Mostaza */
+    color: #333;
+    text-align: center;
+    padding: 25px 20px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* --- Contenido Principal y Tarjetas (Página Inicio) --- */
+.main-content {
+    padding: 40px 0;
+}
+
+.main-content h3 {
+    text-align: center;
+    font-size: 32px;
+    color: #004D40;
+    margin-bottom: 30px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Permite que las tarjetas se reorganicen en pantallas pequeñas */
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 300px;
+    margin: 15px;
+    padding: 25px;
+    text-align: center;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efecto de "levantarse" */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: #00796B;
+    margin-bottom: 15px;
+    /* En un proyecto real, aquí usarías <img> o una fuente de iconos */
+}
+
+.card h4 {
+    font-size: 20px;
+    color: #004D40;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555;
+}
+
+.card-button {
+    display: inline-block;
+    background-color: #00796B;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #004D40;
+}
+
+/* --- Pie de Página --- */
+.main-footer {
+    background-color: #333;
+    color: #aaa;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 30px;
+}
+
+/* --- ESTILOS ADICIONALES PARA LAS OTRAS PÁGINAS --- */
+
+/* --- Títulos de Página --- */
+.page-title {
+    font-size: 36px;
+    color: #004D40;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.page-subtitle {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* --- Estilos para Pestañas (Tabs) [tipos-energia.html] --- */
+.tabs-container {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    padding: 20px;
+}
+.tab-buttons {
+    border-bottom: 2px solid #eee;
+    margin-bottom: 20px;
+}
+.tab-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    color: #555;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+.tab-button:hover {
+    color: #000;
+}
+.tab-button.active {
+    color: #00796B;
+    border-bottom-color: #00796B;
+}
+.tab-content {
+    display: none; /* Oculto por defecto por JS */
+    line-height: 1.6;
+}
+.tab-content.active {
+    display: block; /* Mostrado por JS */
+}
+.tab-content h3 {
+    color: #004D40;
+    font-size: 22px;
+}
+
+/* --- Estilos para Proyectos [proyectos.html] --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas */
+    gap: 25px;
+}
+.project-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    overflow: hidden; /* Para contener la imagen */
+    transition: all 0.3s ease;
+}
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+.project-card.large {
+    grid-column: 1 / -1; /* Ocupa todo el ancho */
+}
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    /* Usamos un color de fondo para los placeholders */
+    background-color: #ccc; 
+}
+.project-info {
+    padding: 20px;
+}
+.project-info h3 {
+    font-size: 22px;
+    color: #004D40;
+    margin-top: 0;
+}
+.project-info span {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 5px 10px;
+    background-color: #e0f2f1;
+    color: #00796B;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* --- Estilos para Programas [programas.html] --- */
+.program-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+.program-card {
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+.program-card h3 {
+    margin-top: 0;
+    font-size: 24px;
+}
+.program-icon {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+/* Colores de los programas */
+.program-card.blue {
+    background-color: #e3f2fd; /* Azul claro */
+    border-left: 5px solid #1E88E5; /* Borde azul */
+}
+.program-card.green {
+    background-color: #e8f5e9; /* Verde claro */
+    border-left: 5px solid #43A047; /* Borde verde */
+}
+.program-card.yellow {
+    background-color: #fffde7; /* Amarillo claro */
+    border-left: 5px solid #FBC02D; /* Borde amarillo */
+}
+.program-button {
+    display: inline-block;
+    background-color: #fff;
+    color: #333;
+    padding: 10px 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+.program-card.blue .program-button { color: #1E88E5; border-color: #1E88E5; }
+.program-card.green .program-button { color: #43A047; border-color: #43A047; }
+.program-card.yellow .program-button { color: #FBC02D; border-color: #FBC02D; }
+
+.program-button:hover {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+}
+
+/* --- ESTILOS ADICIONALES PARA PÁGINA 'FUTURO' [futuro.html] --- */
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.future-card {
+    background-color: #263238; /* Un gris/azul oscuro "tech" */
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 6px solid #00BFA5; /* Un acento "tech" (teal) */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.future-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.future-icon {
+    font-size: 30px;
+    color: #00BFA5;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.future-card h3 {
+    font-size: 22px;
+    color: #00BFA5; /* Color del acento */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.future-card p {
+    color: #eceff1; /* Un blanco menos intenso */
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+/* --- ESTILOS ADICIONALES PARA PÁGINA 'GUÍAS' [guias.html] --- */
+
+.guides-section {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.guide-card {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+    overflow: hidden; /* Para el borde superior */
+    transition: all 0.3s ease;
+}
+
+.guide-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* Bordes de color para cada guía */
+.guide-card.home { border-top: 6px solid #1E88E5; } /* Azul */
+.guide-card.rural { border-top: 6px solid #43A047; } /* Verde */
+.guide-card.industry { border-top: 6px solid #FBC02D; } /* Amarillo */
+
+.guide-card h3 {
+    font-size: 24px;
+    margin: 0;
+    padding: 25px 30px 10px 30px;
+}
+/* Colores de título */
+.guide-card.home h3 { color: #1E88E5; }
+.guide-card.rural h3 { color: #43A047; }
+.guide-card.industry h3 { color: #FBC02D; }
+
+.guide-card p {
+    padding: 0 30px 10px 30px;
+    font-size: 16px;
+    color: #555;
+}
+
+.guide-card ul {
+    line-height: 1.7;
+    padding: 0 30px 20px 50px; /* Padding izquierdo para los 'bullets' */
+    color: #333;
+}
+
+.guide-button {
+    display: block;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #f9f9f9;
+    color: #333;
+    font-weight: bold;
+    border-top: 1px solid #eee;
+    transition: all 0.3s ease;
+}
+
+.guide-button:hover {
+    background-color: #f0f0f0;
+}
+
+.guide-card.home .guide-button:hover { background-color: #e3f2fd; }
+.guide-card.rural .guide-button:hover { background-color: #e8f5e9; }
+.guide-card.industry .guide-button:hover { background-color: #fffde7; }
+
+/* --- ESTILOS ADICIONALES PARA PÁGINA 'GALERÍA' [galeria.html] --- */
+
+.video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos videos por fila */
+    gap: 25px;
+}
+.video-responsive {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.video-responsive iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 imágenes por fila */
+    gap: 15px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* --- ESTILOS ADICIONALES PARA PÁGINA 'CONTACTO' [contacto.html] --- */
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.contact-form-container {
+    flex: 2; /* Ocupa 2/3 */
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.contact-info-container {
+    flex: 1; /* Ocupa 1/3 */
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.contact-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+.contact-form-container input[type="text"],
+.contact-form-container input[type="email"],
+.contact-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Importante */
+}
+.contact-button {
+    background-color: #00796B;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+.contact-button:hover {
+    background-color: #004D40;
+}
+
+.contact-info-container p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.map-placeholder {
+    background: #eee;
+    height: 250px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #777;
+    margin-top: 20px;
+}
+
+/* --- AJUSTES PARA MÓVILES (Responsivo) --- */
+@media (max-width: 768px) {
+    .main-header .container {
+        flex-direction: column;
+    }
+    .main-header nav {
+        margin-top: 10px;
+    }
+    .main-header nav a {
+        margin: 0 5px;
+        font-size: 14px;
+    }
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .card {
+        width: 90%;
+    }
+    .project-grid {
+        grid-template-columns: 1fr; /* Una columna */
+    }
+    .video-grid {
+        grid-template-columns: 1fr; /* Un video por fila */
+    }
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr; /* Dos imágenes por fila */
+    }
+    .contact-wrapper {
+        flex-direction: column;
+    }
+}
