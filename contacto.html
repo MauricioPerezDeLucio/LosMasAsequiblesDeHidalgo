@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacto y Sugerencias - Hidalgo</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .suggestion-form {
+            margin-top: 20px;
+        }
+        .suggestion-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+        .suggestion-form input[type="email"],
+        .suggestion-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Importante */
+        }
+        /* Oculta la flecha/marcador del <summary> */
+        .desplegable > summary {
+            list-style: none; /* Firefox */
+        }
+        .desplegable > summary::-webkit-details-marker {
+            display: none; /* Chrome, Safari, Edge */
+        }
+    </style>
 </head>
 <body>
 
@@ -14,52 +42,3 @@
                 <img src="reloj.png" alt="Icono de Sol" height="40">    
             </div>
             <h1>   LosMasAsequiblesDeHidalgo</h1>
-            <nav>
-                <a href="index.html">Inicio</a>
-                <a href="tipos-energia.html">Tipos de Energía</a>
-                <a href="proyectos.html">Proyectos</a>
-                <a href="programas.html">Programas</a>
-                <a href="futuro.html">Futuro</a>
-                <a href="guias.html">Guías</a>
-                <a href="galeria.html">Galería</a>
-                <a href="contacto.html">Contacto</a>
-            </nav>
-        </div>
-    </header>
-
-    <main class="main-content">
-        <div class="container">
-            <h2 class="page-title">Contacto y Colaboración</h2>
-            <p class="page-subtitle">Este proyecto lo construimos todos. ¡Queremos escuchar tus ideas y sugerencias!</p>
-
-            <div class="program-section" style="display: flex; justify-content: center;">
-
-                <article class="program-card blue" style="max-width: 500px;">
-                    <div class="program-icon" style="font-size: 40px; text-align: center;">
-                        ✉️
-                    </div>
-                    <h3>Sugerencias y Correcciones</h3>
-                    <p>¿Encontraste un error en los datos? ¿Conoces un proyecto, programa o guía que debería estar aquí? Tu feedback es esencial para mantener este sitio actualizado.</p>
-                    
-                    <a href="mailto:tu-email@ejemplo.com?subject=Sugerencia para LosMasAsequiblesDeHidalgo" class="program-button">
-                        Enviar un Email
-                    </a>
-                </article>
-
-                </div>
-            
-            <div class="logo-grande-container" style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
-                <img src="reloj.png" alt="Logo LosMasAsequiblesDeHidalgo" style="max-width: 400px; width: 100%; height: auto;">
-            </div>
-
-        </div>
-    </main>
-
-    <footer class="main-footer">
-        <div class="container">
-            <p>&copy; 2025 LosMásAsequiblesDeHidalgo </p>
-        </div>
-    </footer>
-
-</body>
-</html>
