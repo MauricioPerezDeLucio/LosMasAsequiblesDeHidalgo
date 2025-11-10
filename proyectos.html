@@ -1,132 +1,166 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Transición suave entre pestañas</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f6f8fa;
-      margin: 0;
-      padding: 2rem;
-    }
-
-    .tab-buttons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .tab-button {
-      background: #ddd;
-      border: none;
-      padding: 10px 20px;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background 0.3s;
-      font-weight: bold;
-    }
-
-    .tab-button.active {
-      background: #0078d7;
-      color: white;
-    }
-
-    /* 💫 Contenedor con posición relativa para poder apilar tabs */
-    .tabs-container {
-      position: relative;
-      min-height: 350px;
-    }
-
-    .tab-content {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.8s ease;
-    }
-
-    .tab-content.active {
-      opacity: 1;
-      pointer-events: auto;
-      position: relative;
-    }
-
-    .video-responsive {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      margin-top: 15px;
-    }
-
-    .video-responsive iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Estratégicos - Hidalgo</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h2 style="text-align:center;">Energías Renovables Hidalgo</h2>
 
-  <div class="tab-buttons">
-    <button class="tab-button active" onclick="openTab(event, 'solar')">Solar</button>
-    <button class="tab-button" onclick="openTab(event, 'eolica')">Eólica</button>
-    <button class="tab-button" onclick="openTab(event, 'hidraulica')">Hidráulica</button>
-  </div>
+    <header class="main-header">
+        <div class="container">
+            <div class="card-icon">
+                <img src="reloj.png" alt="Icono de Sol" height=40>       
+            </div>
+            <h1>   LosMasAsequiblesDeHidalgo</h1>
+            <nav>
+                <a href="index.html">Inicio</a>
+                <a href="tipos-energia.html">Tipos de Energía</a>
+                <a href="proyectos.html">Proyectos</a>
+                <a href="programas.html">Programas</a>
+                <a href="futuro.html">Futuro</a>
+                <a href="guias.html">Guías</a>
+                <a href="galeria.html">Galería</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
 
-  <div class="tabs-container">
-    <div id="solar" class="tab-content active">
-      <h3>Energía Solar</h3>
-      <p>La energía solar aprovecha la radiación del sol mediante paneles fotovoltaicos.</p>
-      <div class="video-responsive">
-        <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" allowfullscreen></iframe>
-      </div>
-    </div>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="page-title">Proyectos Estratégicos y Casos de Éxito</h2>
+            <p class="page-subtitle">Hidalgo atrae inversiones millonarias y lleva energía a quienes más lo necesitan.</p>
 
-    <div id="eolica" class="tab-content">
-      <h3>Energía Eólica</h3>
-      <p>Los aerogeneradores transforman la energía del viento en electricidad.</p>
-      <div class="video-responsive">
-        <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" allowfullscreen></iframe>
-      </div>
-    </div>
+            <div class="project-grid">
+                
+                <div class="project-card large" onclick="document.getElementById('audio1').style.display='block'">
+                    <img src="Parque-fotovoltaico-en-Singuilucan-seguira-pese-a-protestas-Sedeco-2025.webp" alt="Parque Solar Singuilucan">
+                    <div class="project-info">
+                        <h3>Proyecto "Pachamama" (Dhamma Energy)</h3>
+                        <p>En Singuilucan y Epazoyucan. Representa una inversión de <strong>más de 6 mil millones de pesos</strong> y es un pilar para la atracción de nuevas empresas.</p>
+                        <span>Inversión: +6,000 mdp</span>
+                        <div class ="audio-container">
+                            <audio id="audio1" src="adair_Pachamama.mp3" controls></audio>
+                        </div>
 
-    <div id="hidraulica" class="tab-content">
-      <h3>Energía Hidráulica</h3>
-      <p>Aprovecha el movimiento del agua para generar electricidad limpia y constante.</p>
-      <div class="video-responsive">
-        <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
+                        <style>
+                            .project-card {
+                                position: relative;            /* Importante para posicionar el audio dentro */
+                                cursor: pointer;
+                                transition: transform 0.2s;
+                                background: #fff;
+                                padding-bottom: 60px;          /* Deja espacio para el audio */
+                            }
 
-  <script>
-    function openTab(evt, tabName) {
-      const tabs = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tab-button');
+                            .project-card:hover {
+                                transform: scale(1.02);
+                            }
 
-      tabs.forEach(tab => tab.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
+                            .project-info {
+                                padding: 15px;
+                            }
 
-      document.getElementById(tabName).classList.add('active');
-      evt.currentTarget.classList.add('active');
+                            .project-card audio {
+                                position: absolute;            /* Lo posiciona dentro del contenedor */
+                                bottom: 10px;                  /* Margen inferior (ajústalo) */
+                                left: 50%;
+                                transform: translateX(-50%);   /* Centra horizontalmente */
+                                width: 80%;
+                                max-width: 400px;
+                            }
+                        </style>
+                    </div>
+                </div>
 
-      // Reinicia el video por si no carga bien tras ocultarse
-      const iframe = document.getElementById(tabName).querySelector('iframe');
-      if (iframe) {
-        iframe.src = iframe.src;
-      }
-    }
-  </script>
+
+                <div class="project-card">
+                    <img src="chr07_f1_especial-3-768x432.webp" alt="Planta Solar Nopala">
+                    <div class="project-info">
+                        <h3>Planta Solar Nopala (Atlas)</h3>
+                        <p>Operativa en Nopala de Villagrán. Genera ~300 GWh/año, equivalente a la energía de 120,000 hogares.</p>
+                        <span>Potencia: 129 MWp</span>
+                        <div class ="audio-container">
+                            <audio id="audio2" src="adair_nopala.mp3" controls></audio>
+                        </div>
+
+                        <style>
+                            .project-card {
+                                position: relative;            /* Importante para posicionar el audio dentro */
+                                cursor: pointer;
+                                transition: transform 0.2s;
+                                background: #fff;
+                                padding-bottom: 60px;          /* Deja espacio para el audio */
+                            }
+
+                            .project-card:hover {
+                                transform: scale(1.02);
+                            }
+
+                            .project-info {
+                                padding: 15px;
+                            }
+
+                            .project-card audio {
+                                position: absolute;            /* Lo posiciona dentro del contenedor */
+                                bottom: 10px;                  /* Margen inferior (ajústalo) */
+                                left: 50%;
+                                transform: translateX(-50%);   /* Centra horizontalmente */
+                                width: 80%;
+                                max-width: 400px;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="Mexico_Hidalgo_Encarnacion-003.jfif" alt="Sistemas Aislados">
+                    <div class="project-info">
+                        <h3>Proyecto Los Mármoles</h3>
+                        <p>117 paquetes fotovoltaicos autónomos en 43 localidades rurales de Zimapán, Jacala, Pacula y Nicolás Flores.</p>
+                        <span>Impacto: +117 Familias</span>
+                        <div class ="audio-container">
+                            <audio id="audio2" src="C418 - Wet Hands - Minecraft Volume Alpha [mukiMaOSLEs].mp3" controls></audio>
+                        </div>
+
+                        <style>
+                            .project-card {
+                                position: relative;            /* Importante para posicionar el audio dentro */
+                                cursor: pointer;
+                                transition: transform 0.2s;
+                                background: #fff;
+                                padding-bottom: 60px;          /* Deja espacio para el audio */
+                            }
+
+                            .project-card:hover {
+                                transform: scale(1.02);
+                            }
+
+                            .project-info {
+                                padding: 15px;
+                            }
+
+                            .project-card audio {
+                                position: absolute;            /* Lo posiciona dentro del contenedor */
+                                bottom: 10px;                  /* Margen inferior (ajústalo) */
+                                left: 50%;
+                                transform: translateX(-50%);   /* Centra horizontalmente */
+                                width: 80%;
+                                max-width: 400px;
+                            }
+                        </style>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Portal de Energía de Hidalgo.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
