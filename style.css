@@ -411,6 +411,12 @@ body {
     font-weight: bold;
     border-top: 1px solid #eee;
     transition: all 0.3s ease;
+    cursor: pointer; /* <-- AÑADE ESTA LÍNEA */
+    list-style: none; /* <-- AÑADE ESTA LÍNEA (Oculta flecha en Firefox) */
+}
+/* Añade este bloque nuevo */
+.guide-button::-webkit-details-marker {
+    display: none;
 }
 
 .guide-button:hover {
