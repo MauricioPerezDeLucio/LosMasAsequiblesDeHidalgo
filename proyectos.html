@@ -5,13 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Proyectos Estratégicos - Hidalgo</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .audio-container {
+            text-align: center; /* Centra el audio */
+            margin-top: 20px;
+        }
+        .project-card audio {
+            width: 90%;
+            max-width: 400px;
+        }
+        .project-button-container {
+            text-align: center;
+            margin-top: 15px; /* Espacio entre audio y botón */
+            margin-bottom: 10px; /* Espacio al fondo de la tarjeta */
+        }
+    </style>
 </head>
 <body>
 
     <header class="main-header">
         <div class="container">
             <div class="card-icon">
-                <img src="reloj.png" alt="Icono de Sol" height=40>       
+                <img src="reloj.png" alt="Icono de Sol" height=40>    
             </div>
             <h1>   LosMasAsequiblesDeHidalgo</h1>
             <nav>
@@ -34,45 +50,24 @@
 
             <div class="project-grid">
                 
-                <div class="project-card large" onclick="document.getElementById('audio1').style.display='block'">
+                <div class="project-card large">
                     <img src="Parque-fotovoltaico-en-Singuilucan-seguira-pese-a-protestas-Sedeco-2025.webp" alt="Parque Solar Singuilucan">
                     <div class="project-info">
                         <h3>Proyecto "Pachamama" (Dhamma Energy)</h3>
                         <p>En Singuilucan y Epazoyucan. Representa una inversión de <strong>más de 6 mil millones de pesos</strong> y es un pilar para la atracción de nuevas empresas.</p>
                         <span>Inversión: +6,000 mdp</span>
-                        <div class ="audio-container">
+                        
+                        <div class="audio-container">
                             <audio id="audio1" src="adair_Pachamama.mp3" controls></audio>
                         </div>
 
-                        <style>
-                            .project-card {
-                                position: relative;            /* Importante para posicionar el audio dentro */
-                                cursor: pointer;
-                                transition: transform 0.2s;
-                                background: #fff;
-                                padding-bottom: 60px;          /* Deja espacio para el audio */
-                            }
-
-                            .project-card:hover {
-                                transform: scale(1.02);
-                            }
-
-                            .project-info {
-                                padding: 15px;
-                            }
-
-                            .project-card audio {
-                                position: absolute;            /* Lo posiciona dentro del contenedor */
-                                bottom: 10px;                  /* Margen inferior (ajústalo) */
-                                left: 50%;
-                                transform: translateX(-50%);   /* Centra horizontalmente */
-                                width: 80%;
-                                max-width: 400px;
-                            }
-                        </style>
+                        <div class="project-button-container">
+                            <a href="https://www.dhammaenergy.com/nuestros-proyectos/" class="program-button yellow" target="_blank" rel="noopener noreferrer">
+                                Ver Proyectos (Dhamma)
+                            </a>
+                        </div>
                     </div>
                 </div>
-
 
                 <div class="project-card">
                     <img src="chr07_f1_especial-3-768x432.webp" alt="Planta Solar Nopala">
@@ -80,36 +75,16 @@
                         <h3>Planta Solar Nopala (Atlas)</h3>
                         <p>Operativa en Nopala de Villagrán. Genera ~300 GWh/año, equivalente a la energía de 120,000 hogares.</p>
                         <span>Potencia: 129 MWp</span>
-                        <div class ="audio-container">
+                        
+                        <div class="audio-container">
                             <audio id="audio2" src="adair_nopala.mp3" controls></audio>
                         </div>
 
-                        <style>
-                            .project-card {
-                                position: relative;            /* Importante para posicionar el audio dentro */
-                                cursor: pointer;
-                                transition: transform 0.2s;
-                                background: #fff;
-                                padding-bottom: 60px;          /* Deja espacio para el audio */
-                            }
-
-                            .project-card:hover {
-                                transform: scale(1.02);
-                            }
-
-                            .project-info {
-                                padding: 15px;
-                            }
-
-                            .project-card audio {
-                                position: absolute;            /* Lo posiciona dentro del contenedor */
-                                bottom: 10px;                  /* Margen inferior (ajústalo) */
-                                left: 50%;
-                                transform: translateX(-50%);   /* Centra horizontalmente */
-                                width: 80%;
-                                max-width: 400px;
-                            }
-                        </style>
+                        <div class="project-button-container">
+                            <a href="https://es.atlasrenewableenergy.com/proyectos/planta-solar-guajiro-hidalgo-mexico/" class="program-button blue" target="_blank" rel="noopener noreferrer">
+                                Ver Ficha Oficial (Atlas)
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -119,36 +94,16 @@
                         <h3>Proyecto Los Mármoles</h3>
                         <p>117 paquetes fotovoltaicos autónomos en 43 localidades rurales de Zimapán, Jacala, Pacula y Nicolás Flores.</p>
                         <span>Impacto: +117 Familias</span>
-                        <div class ="audio-container">
-                            <audio id="audio2" src="C418 - Wet Hands - Minecraft Volume Alpha [mukiMaOSLEs].mp3" controls></audio>
+                        
+                        <div class="audio-container">
+                            <audio id="audio3" src="C418 - Wet Hands - Minecraft Volume Alpha [mukiMaOSLEs].mp3" controls></audio>
                         </div>
 
-                        <style>
-                            .project-card {
-                                position: relative;            /* Importante para posicionar el audio dentro */
-                                cursor: pointer;
-                                transition: transform 0.2s;
-                                background: #fff;
-                                padding-bottom: 60px;          /* Deja espacio para el audio */
-                            }
-
-                            .project-card:hover {
-                                transform: scale(1.02);
-                            }
-
-                            .project-info {
-                                padding: 15px;
-                            }
-
-                            .project-card audio {
-                                position: absolute;            /* Lo posiciona dentro del contenedor */
-                                bottom: 10px;                  /* Margen inferior (ajústalo) */
-                                left: 50%;
-                                transform: translateX(-50%);   /* Centra horizontalmente */
-                                width: 80%;
-                                max-width: 400px;
-                            }
-                        </style>
+                        <div class="project-button-container">
+                            <a href="https://energiaquetransforma.hidalgo.gob.mx/" class="program-button green" target="_blank" rel="noopener noreferrer">
+                                Ver Programa (GobHgo)
+                            </a>
+                        </div>
                     </div>
                 </div>
 
