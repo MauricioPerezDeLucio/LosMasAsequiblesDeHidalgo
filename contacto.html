@@ -72,7 +72,7 @@
                         <div class="suggestion-form">
                             <p style="color: #333; margin-top: 0;">Tu correo solo se usará si necesitamos contactarte sobre tu sugerencia.</p>
                             
-                            <form action="https://formspree.io/f/xjkjvbej" method="POST">
+                            <form id="suggestion-form" action="https://formspree.io/f/xjkjvbej" method="POST">
                                 <label for="email">Tu Correo (Opcional):</label>
                                 <input type="email" id="email" name="email">
 
@@ -100,6 +100,12 @@
             <p>&copy; 2025 LosMásAsequiblesDeHidalgo </p>
         </div>
     </footer>
+
+    <script>
+        window.onload = function() {
+            document.getElementById('suggestion-form').reset();
+        };
+    </script>
 
 </body>
 </html>
