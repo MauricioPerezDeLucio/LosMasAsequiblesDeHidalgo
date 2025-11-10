@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tipos de Energía - Hidalgo</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Efecto fade-in */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease; /* duración y suavidad del efecto */
+        }
+
+        .tab-content.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .tab-button.active {
+            background-color: #0b7dda;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +32,7 @@
             <h1>Energía Renovable Hidalgo</h1>
             <nav>
                 <a href="index.html">Inicio</a>
-                <a href="tipos-energia.html">Tipos de Energía</a>
+                <a href="tipos-energia.html" class="active">Tipos de Energía</a>
                 <a href="proyectos.html">Proyectos</a>
                 <a href="programas.html">Programas</a>
                 <a href="futuro.html">Futuro</a>
@@ -37,44 +56,47 @@
                     <button class="tab-button" onclick="openTab(event, 'otras')">Otras</button>
                 </div>
 
+                <!-- 🌞 Solar -->
                 <div id="solar" class="tab-content active">
                     <h3>Energía Solar Fotovoltaica</h3>
                     <p><strong>Potencial:</strong> 70.1% del total (Escenario 1) | 40.6% (Escenario 2)</p>
-                    <p>Hidalgo cuenta con un recurso solar excepcional y altos índices de irradiación, siendo la más prometedora. El potencial aprovechable a corto plazo es de ~6,437 GWh/año.</p>
+                    <p>Hidalgo cuenta con un recurso solar excepcional y altos índices de irradiación, siendo la más prometedora.</p>
                     <div class="video-grid">
                         <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
-                
                 </div>
 
-                <div id="eolica" class="tab-content" style="display:block;">
+                <!-- 🌬️ Eólica -->
+                <div id="eolica" class="tab-content">
                     <h3>Energía Eólica</h3>
                     <p><strong>Potencial:</strong> 28.6% del total (Escenario 1) | 52.3% (Escenario 2)</p>
-                    <p>Existe un gran potencial en zonas como los Llanos de Apan y Tepeapulco, donde el flujo de aire laminar y las velocidades del viento son favorables para aerogeneradores.</p>
+                    <p>Gran potencial en zonas como los Llanos de Apan y Tepeapulco, donde el flujo de aire laminar es ideal.</p>
                     <div class="video-grid">
                         <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
 
+                <!-- 💧 Hidráulica -->
                 <div id="hidraulica" class="tab-content">
                     <h3>Mini-Hidráulica</h3>
                     <p><strong>Potencial:</strong> ~409 GWh (INERE)</p>
-                    <p>Se pueden aprovechar los recursos hídricos en regiones como la Huasteca y el cauce del Río Tula, que tiene una diferencia de nivel de 1,800 metros hasta Tamazunchale.</p>
+                    <p>Recursos hídricos aprovechables en regiones como la Huasteca y el cauce del Río Tula.</p>
                     <div class="video-grid">
                         <div class="video-responsive">
-                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <iframe src="https://www.youtube.com/embed/5RNkkmauD7w" frameborder="0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
 
+                <!-- 🌱 Otras -->
                 <div id="otras" class="tab-content">
                     <h3>Otras (Biomasa, Geotermia)</h3>
                     <p><strong>Potencial Geotérmico:</strong> ~1,224 GWh (INERE)</p>
-                    <p>Se explora el potencial de biogás derivado de residuos agrícolas (como nopal) y ganaderos, además del alto potencial geotérmico del estado.</p>
+                    <p>Incluye biogás derivado de residuos agrícolas y ganaderos, y recursos geotérmicos del estado.</p>
                 </div>
             </div>
         </div>
@@ -88,20 +110,31 @@
 
     <script>
         function openTab(evt, tabName) {
-            var i, tabcontent, tabbuttons;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+            const tabcontent = document.getElementsByClassName("tab-content");
+            const tabbuttons = document.getElementsByClassName("tab-button");
+
+            // Oculta todas las pestañas
+            for (let i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
             }
-            tabbuttons = document.getElementsByClassName("tab-button");
-            for (i = 0; i < tabbuttons.length; i++) {
-                tabbuttons[i].className = tabbuttons[i].className.replace(" active", "");
+
+            // Desactiva todos los botones
+            for (let i = 0; i < tabbuttons.length; i++) {
+                tabbuttons[i].classList.remove("active");
             }
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
+
+            // Muestra la pestaña seleccionada
+            const currentTab = document.getElementById(tabName);
+            currentTab.classList.add("active");
+            evt.currentTarget.classList.add("active");
+
+            // 🔄 Refresca el iframe (YouTube a veces no renderiza tras display:none)
+            const iframe = currentTab.querySelector("iframe");
+            if (iframe) {
+                const src = iframe.src;
+                iframe.src = src;
+            }
         }
-        // Mostrar la primera pestaña por defecto
-        document.getElementById("solar").style.display = "block";
     </script>
 
 </body>
